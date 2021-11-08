@@ -51,15 +51,20 @@ export const Head = observer(({meta}) => {
       {"article:section" in meta && <meta property="article:section" content={meta["article:section"]} />}
       {"article:published_time" in meta && <meta property="article:published_time" content={meta["article:published_time"]} />}
       {"article:author" in meta && <meta property="article:author" content={meta["article:author"]} />}
-      <meta property="og:site_name" content="Rada" />
+      <meta property="og:site_name" content="Rada Network" />
       <meta name="theme-color" content="#E5E7EB" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="mobile-web-app-capable" content="yes" />
+      
+      <meta name="language" content={ dataStore.lang === "en" ? "en-US" : "vi_VN" }/>
+      <meta name="url" content={"https://rada.network" + meta["og:url"]}/>
+
       <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
         key="google-fonts-preconnect_1"
       />
+
       <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
@@ -84,6 +89,10 @@ export const Head = observer(({meta}) => {
       />
 
       <link rel="manifest" href={"/manifest.json"} />
+
+      <link rel="alternate" 
+        href={"https://rada.network" + meta["og:url"]} 
+        hrefLang={ dataStore.lang === "en" ? "en-US" : "vi_VN" }/>
       
     </HTMLHead>
 

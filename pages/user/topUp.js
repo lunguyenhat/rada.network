@@ -62,24 +62,19 @@ export default function UserProfile(props) {
   if (loading) return null;
   // If no session exists, display access denied message
   if (!session) {
-    return (
-      <ProfileAccessDenied dataStore={dataStore} detailStore={detailStore} />
-    );
+    return <ProfileAccessDenied dataStore={dataStore} detailStore={detailStore} />;
   }
   // If session exists, display content
   const meta = {
     title:
-      (user?.name ? user?.name : "User").replace(/(^|\s)\S/g, (letter) =>
-        letter.toUpperCase()
-      ) + " Top up",
+      (user?.name ? user?.name : "User").replace(/(^|\s)\S/g, (letter) => letter.toUpperCase()) +
+      " Top up",
   };
   const handleTopupChange = (e) => {
     const { name, value, type } = e.target;
     if (
       name === "number_rir" &&
-      (isNaN(value) ||
-        +value >
-          topupInfo.max_rir - topupInfo.pending_rir - topupInfo.approved_rir)
+      (isNaN(value) || +value > topupInfo.max_rir - topupInfo.pending_rir - topupInfo.approved_rir)
     ) {
       return;
     }
@@ -93,8 +88,7 @@ export default function UserProfile(props) {
     let valueChanged = (+topupForm.number_rir || 0) + value;
     if (
       valueChanged < 0 ||
-      valueChanged >
-        topupInfo.max_rir - topupInfo.pending_rir - topupInfo.approved_rir
+      valueChanged > topupInfo.max_rir - topupInfo.pending_rir - topupInfo.approved_rir
     )
       return;
     setTopupForm({
@@ -133,13 +127,13 @@ export default function UserProfile(props) {
   };
 
   const handleCopy = () => {
-    toast.success("Copied to clipboard", {})
+    toast.success("Copied to clipboard", {});
   };
 
   const handleBack = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    router.back()
+    router.back();
   };
 
   return (
@@ -155,7 +149,7 @@ export default function UserProfile(props) {
                 <span className="btn--text sr-only">Quay lại</span>
               </div>
             </div>
-            <span className="">Top up</span>  
+            <span className="">Top up</span>
             <div className="ml-auto inline-flex px-3 py-1 items-center rounded border border-gray-100 dark:border-gray-800">
               <span className="text-xs text-gray-500 mr-2 uppercase font-semibold">
                 {t("balance")}
@@ -163,27 +157,20 @@ export default function UserProfile(props) {
               <span className="flex w-5 h-5 m-auto opacity-80">
                 <RadaSvg />
               </span>
-              <span className="ml-1">
-                {topupInfo.approved_rir - topupInfo.used_rir} RIR
-              </span>
+              <span className="ml-1">{topupInfo.approved_rir - topupInfo.used_rir} RIR</span>
             </div>
-
-
           </div>
           <div className="flex items-center">
-            
             <div className="flex-1 mt-2 w-100 text-gray-500">
               <span>
-                {t("balance note",{
-                      number : topupInfo.max_rir - topupInfo.approved_rir - topupInfo.pending_rir
-                    })}
+                {t("balance note", {
+                  number: topupInfo.max_rir - topupInfo.approved_rir - topupInfo.pending_rir,
+                })}
               </span>
             </div>
           </div>
           <div className="card--wrapper mt-4">
-            <h3 className="text-gray-400 card--header">
-              {t("Top-up your balance")}
-            </h3>
+            <h3 className="text-gray-400 card--header">{t("Top-up your balance")}</h3>
             <div className="card--body">
               <div className="step--wrapper">
                 <div className="step--header flex">
@@ -209,10 +196,7 @@ export default function UserProfile(props) {
                       value={topupForm.number_rir}
                       onChange={handleTopupChange}
                       disabled={
-                        topupInfo.max_rir -
-                          topupInfo.pending_rir -
-                          topupInfo.approved_rir ===
-                        0
+                        topupInfo.max_rir - topupInfo.pending_rir - topupInfo.approved_rir === 0
                       }
                     />
                     <div className="absolute flex right-2 top-2">
@@ -223,10 +207,7 @@ export default function UserProfile(props) {
                         +
                       </button>
                       <button
-                        disabled={
-                          topupForm.number_rir === "" ||
-                          topupForm.number_rir === 0
-                        }
+                        disabled={topupForm.number_rir === "" || topupForm.number_rir === 0}
                         onClick={() => handleNumberRirChange(-1)}
                         className={`mr-1 leading-0 w-6 center bg-gray-200 dark:bg-gray-800 ${
                           topupForm.number_rir !== ""
@@ -245,85 +226,85 @@ export default function UserProfile(props) {
                 </div>
               </div>
               {/* End: Step 1 */}
-              {topupForm.number_rir > 0 && 
-              <>
-                <div className="sep"></div>
-                <div className="step--wrapper">
-                  <div className="step--header flex">
-                    <span className="step--indicator">2</span>
-                    <h3 dangerouslySetInnerHTML={{__html : t("Send USDT",{
-                      number : `<span class="font-semibold dark:text-white">
+              {topupForm.number_rir > 0 && (
+                <>
+                  <div className="sep"></div>
+                  <div className="step--wrapper">
+                    <div className="step--header flex">
+                      <span className="step--indicator">2</span>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: t("Send USDT", {
+                            number: `<span className="font-semibold dark:text-white">
                       ${topupForm.number_rir * 100}USDT
-                      </span>`
-                    })}}>
-                    </h3>
-                    {/* add 100 if user enter 1RIR, 200 for 2RIR*/}
-                  </div>
-                  <div className="step--content">
-                    <div className="flex flex-wrap justify-between mb-1">
-                      <div className="w-full lg:w-auto">
-                        <span className="uppercase opacity-50 text-2xs md:text-xs">
-                          {t("wallet address")}
-                        </span>
+                      </span>`,
+                          }),
+                        }}
+                      ></h3>
+                      {/* add 100 if user enter 1RIR, 200 for 2RIR*/}
+                    </div>
+                    <div className="step--content">
+                      <div className="flex flex-wrap justify-between mb-1">
+                        <div className="w-full lg:w-auto">
+                          <span className="uppercase opacity-50 text-2xs md:text-xs">
+                            {t("wallet address")}
+                          </span>
+                        </div>
+                        <div className="">
+                          <CopyToClipboard
+                            onCopy={handleCopy}
+                            text={topupInfo?.rada_treasury_address}
+                          >
+                            <a href="#" className="btn btn-default btn-default-sm">
+                              <span className="btn--text break-all">
+                                {topupInfo?.rada_treasury_address}
+                              </span>
+                              <span className="icon">
+                                <i className="fa-regular fa-copy text-2xs"></i>
+                              </span>
+                            </a>
+                          </CopyToClipboard>
+                        </div>
                       </div>
-                      <div className="">
-                        <CopyToClipboard
-                          onCopy={handleCopy}
-                          text={topupInfo?.rada_treasury_address}
-                        >
-                          <a href="#" className="btn btn-default btn-default-sm">
-                            <span className="btn--text break-all">
-                              {topupInfo?.rada_treasury_address}
-                            </span>
-                            <span className="icon">
-                              <i class="fa-regular fa-copy text-2xs"></i>
-                            </span>
-                          </a>
-                        </CopyToClipboard>
+                      <div className="flex flex-wrap justify-between mb-1">
+                        <div className="w-full lg:w-auto">
+                          <span className="uppercase opacity-50 text-2xs md:text-xs">
+                            {t("network")}
+                          </span>
+                        </div>
+                        <div className="text-sm">
+                          BSC <span className="text-gray-500">Binance Smart Chain (BEP20)</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex flex-wrap justify-between mb-1">
-                      <div className="w-full lg:w-auto">
-                        <span className="uppercase opacity-50 text-2xs md:text-xs">
-                          {t("network")}
-                        </span>
-                      </div>
-                      <div className="text-sm">
-                        BSC{" "}
-                        <span className="text-gray-500">
-                          Binance Smart Chain (BEP20)
-                        </span>
-                      </div>
+                  </div>
+                  {/* End: Step 2 */}
+                  <div className="sep"></div>
+                  <div className="step--wrapper">
+                    <div className="step--header flex">
+                      <span className="step--indicator">3</span>
+                      <h3>{t("Confirm your transaction")}</h3>
+                    </div>
+                    <div className="step--content">
+                      <form>
+                        <div className="inline-field--wrapper">
+                          <label htmlFor="txh" className="inline--label">
+                            {t("Paste your Transaction")}
+                          </label>
+                          <input
+                            className="inline--field"
+                            id="txh"
+                            type="text"
+                            name="txid"
+                            value={topupForm.txid}
+                            onChange={handleTopupChange}
+                          />
+                        </div>
+                      </form>
                     </div>
                   </div>
-                </div>
-              {/* End: Step 2 */}
-                <div className="sep"></div>
-                <div className="step--wrapper">
-                  <div className="step--header flex">
-                    <span className="step--indicator">3</span>
-                    <h3>{t("Confirm your transaction")}</h3>
-                  </div>
-                  <div className="step--content">
-                    <form>
-                      <div className="inline-field--wrapper">
-                        <label htmlFor="txh" className="inline--label">
-                          {t("Paste your Transaction")}
-                        </label>
-                        <input
-                          className="inline--field"
-                          id="txh"
-                          type="text"
-                          name="txid"
-                          value={topupForm.txid}
-                          onChange={handleTopupChange}
-                        />
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </>
-              }
+                </>
+              )}
               {/* End: Step 3 */}
             </div>
             {/* Card body */}
@@ -332,9 +313,7 @@ export default function UserProfile(props) {
               <button
                 disabled={topupForm.number_rir === "" || topupForm.txid === ""}
                 className={`btn btn-primary ${
-                  topupForm.number_rir === "" || topupForm.txid === ""
-                    ? "disabled"
-                    : ""
+                  topupForm.number_rir === "" || topupForm.txid === "" ? "disabled" : ""
                 } py-2 px-3`}
                 onClick={handleTopup}
               >
@@ -353,9 +332,7 @@ export default function UserProfile(props) {
                   </span>
                   <span className="w-3/6">TOP UP</span>
                   <span className="ml-2">
-                    {invest.is_approved
-                      ? invest.approved_rir
-                      : invest.pending_rir}
+                    {invest.is_approved ? invest.approved_rir : invest.pending_rir}
                     RIR
                   </span>
                   <span
@@ -401,7 +378,7 @@ const ProfileAccessDenied = ({}) => {
 export async function getStaticProps(context) {
   return {
     props: {
-      ...(await serverSideTranslations(context.locale, ["common", "navbar","invest"])),
+      ...(await serverSideTranslations(context.locale, ["common", "navbar", "invest"])),
       lang: context.locale,
     },
   };

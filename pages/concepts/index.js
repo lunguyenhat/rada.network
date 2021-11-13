@@ -12,7 +12,7 @@ export default function ConceptsIndex() {
   }, []);
 
   return (
-    <Layout extraClass="page-home">
+    <Layout extraclassName="page-home">
       <div className={`pane-content`}>
         <div className="pane-content--sec pane-content-active !w-full">
           <div className="pane-content--sec--top !hidden"></div>
@@ -23,9 +23,7 @@ export default function ConceptsIndex() {
                 {links.map((uri) => (
                   <li className="px-2 py-4 border-b border-gray-400 border-opacity-20 text-sm font-medium">
                     <Link href={uri}>
-                      <a className="flex justify-between hover:text-primary-500">
-                        {uri}
-                      </a>
+                      <a className="flex justify-between hover:text-primary-500">{uri}</a>
                     </Link>
                   </li>
                 ))}

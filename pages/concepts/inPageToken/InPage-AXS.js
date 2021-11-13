@@ -10,7 +10,6 @@ function Concept() {
         <div className="page page-coininfo max-w-screen-md mx-auto">
           <div className="section section-coininfo--general">
             <div className="grid grid-cols-1">
-
               {/* Post Header */}
               <div className="flex flex-col">
                 <div className="flex flex-wrap justify-between items-center w-full">
@@ -23,12 +22,8 @@ function Concept() {
                       />
                     </span>
                     <h1 className="flex items-center">
-                      <strong className="text-xl font-semibold">
-                        Axie Infinity
-                      </strong>
-                      <span className="badge badge-coin badge-coin-lg ml-2">
-                        AXS
-                      </span>
+                      <strong className="text-xl font-semibold">Axie Infinity</strong>
+                      <span className="badge badge-coin badge-coin-lg ml-2">AXS</span>
                     </h1>
                   </div>
                   <div className="flex flex-wrap space-x-2 mb-4">
@@ -46,16 +41,14 @@ function Concept() {
                       <div className="pricing">
                         <span className="pricing-value">$51.15</span>
                         <span className="pricing-indicator" type="down">
-                          <i class="fa-solid fa-caret-down mr-1"></i>
+                          <i className="fa-solid fa-caret-down mr-1"></i>
                           9.37%
                         </span>
                       </div>
                       <div className="pricing pricing-sm mt-2">
-                        <span className="pricing-value opacity-50">
-                          0.001241 BTC
-                        </span>
+                        <span className="pricing-value opacity-50">0.001241 BTC</span>
                         <span className="pricing-indicator" type="up">
-                          <i class="fa-solid fa-caret-up mr-1"></i>
+                          <i className="fa-solid fa-caret-up mr-1"></i>
                           3.51%
                         </span>
                       </div>
@@ -64,7 +57,6 @@ function Concept() {
 
                     {/* Pricing Info */}
                     <div className="flex flex-wrap md:flex-nowrap w-full md:ml-6 md:space-x-2 md:divide-x divide-gray-400 divide-opacity-20">
-
                       <div className="md:text-center pr-4 md:pr-0 md:w-1/2 lg:w-full">
                         <div className="w-full lg:w-auto">
                           <span className="uppercase opacity-50 text-2xs md:text-xs">
@@ -119,7 +111,6 @@ function Concept() {
                           </strong>
                         </div>
                       </div>
-
                     </div>
                     {/* END: Pricing Info */}
                   </div>
@@ -130,9 +121,7 @@ function Concept() {
                     <div className="text-sm w-full">
                       <div className="flex flex-wrap justify-between items-center">
                         <div className="field-label">
-                          <span className="uppercase opacity-50 text-2xs md:text-xs">
-                            Website
-                          </span>
+                          <span className="uppercase opacity-50 text-2xs md:text-xs">Website</span>
                         </div>
                         <div className="">
                           <a
@@ -142,11 +131,9 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-regular fa-globe"></i>
+                              <i className="fa-regular fa-globe"></i>
                             </span>
-                            <span className="btn--text">
-                              https://axieinfinity.com/
-                            </span>
+                            <span className="btn--text">https://axieinfinity.com/</span>
                           </a>
                         </div>
                       </div>
@@ -165,7 +152,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-twitter"></i>
+                              <i className="fa-brands fa-twitter"></i>
                             </span>
                             <span className="btn--text">Twitter</span>
                           </a>
@@ -176,7 +163,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-telegram"></i>
+                              <i className="fa-brands fa-telegram"></i>
                             </span>
                             <span className="btn--text">Telegram</span>
                           </a>
@@ -187,7 +174,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-discord"></i>
+                              <i className="fa-brands fa-discord"></i>
                             </span>
                             <span className="btn--text">Discord</span>
                           </a>
@@ -198,7 +185,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-medium"></i>
+                              <i className="fa-brands fa-medium"></i>
                             </span>
                             <span className="btn--text">Medium</span>
                           </a>
@@ -207,9 +194,7 @@ function Concept() {
 
                       <div className="flex flex-wrap justify-between items-center">
                         <div className="field-label">
-                          <span className="uppercase opacity-50 text-2xs md:text-xs">
-                            Explorer
-                          </span>
+                          <span className="uppercase opacity-50 text-2xs md:text-xs">Explorer</span>
                         </div>
                         <div className="">
                           <a
@@ -241,37 +226,25 @@ function Concept() {
 
                       <div className="flex flex-wrap justify-between items-center">
                         <div className="field-label">
-                          <span className="uppercase opacity-50 text-2xs md:text-xs">
-                            Contract
-                          </span>
+                          <span className="uppercase opacity-50 text-2xs md:text-xs">Contract</span>
                         </div>
                         <div className="">
-                          <a
-                            href="#"
-                            className="btn btn-default btn-default-sm mb-2 mr-2"
-                          >
+                          <a href="#" className="btn btn-default btn-default-sm mb-2 mr-2">
                             <span className="icon">
-                              <i class="cf cf-eth"></i>
+                              <i className="cf cf-eth"></i>
                             </span>
-                            <span className="btn--text">
-                              0xF5D6696273...8dd940327b28b
-                            </span>
+                            <span className="btn--text">0xF5D6696273...8dd940327b28b</span>
                             <span className="icon">
-                              <i class="fa-regular fa-copy text-2xs"></i>
+                              <i className="fa-regular fa-copy text-2xs"></i>
                             </span>
                           </a>
-                          <a
-                            href="#"
-                            className="btn btn-default btn-default-sm mb-2"
-                          >
+                          <a href="#" className="btn btn-default btn-default-sm mb-2">
                             <span className="icon">
-                              <i class="cf cf-bsc"></i>
+                              <i className="cf cf-bsc"></i>
                             </span>
-                            <span className="btn--text">
-                              0xF5D6696273...8dd940327b28b
-                            </span>
+                            <span className="btn--text">0xF5D6696273...8dd940327b28b</span>
                             <span className="icon">
-                              <i class="fa-regular fa-copy text-2xs"></i>
+                              <i className="fa-regular fa-copy text-2xs"></i>
                             </span>
                           </a>
                         </div>
@@ -279,82 +252,69 @@ function Concept() {
                     </div>
                   </div>
                 </div>
-              
               </div>
               {/* End: Post Header */}
 
               {/* Post Content */}
               <div className="w-full mt-4">
                 <div className="post-media">
-                  <img
-                    src="/images/examples/axs-intro.jpeg"
-                    className=""
-                    alt="AXS"
-                  />
+                  <img src="/images/examples/axs-intro.jpeg" className="" alt="AXS" />
                 </div>
 
                 <div className="post-content mt-8">
                   <h2>About Axie Infinity</h2>
 
                   <p>
-                    Axie Infinity is a blockchain-based trading and battling
-                    game that is partially owned and operated by its players.
+                    Axie Infinity is a blockchain-based trading and battling game that is partially
+                    owned and operated by its players.
                   </p>
 
                   <p>
-                    Inspired by popular games like Pokémon and Tamagotchi, Axie
-                    Infinity allows players to collect, breed, raise, battle and
-                    trade token-based creatures known as Axies.
+                    Inspired by popular games like Pokémon and Tamagotchi, Axie Infinity allows
+                    players to collect, breed, raise, battle and trade token-based creatures known
+                    as Axies.
                   </p>
 
                   <p>
-                    These Axies can take various forms, and there are more than
-                    500 different body parts available, including aquatic,
-                    beast, bird, bug, plant and reptile parts. Parts from each
-                    type class come in four different rarity scales: common,
-                    rare, ultra rare and legendary — and Axies can have any
-                    combination of body parts, making them highly variable and
-                    often rare and unique.
+                    These Axies can take various forms, and there are more than 500 different body
+                    parts available, including aquatic, beast, bird, bug, plant and reptile parts.
+                    Parts from each type class come in four different rarity scales: common, rare,
+                    ultra rare and legendary — and Axies can have any combination of body parts,
+                    making them highly variable and often rare and unique.
                   </p>
 
                   <h3>What Axie Infinity does?</h3>
 
                   <p>
-                    Each Axie is a non-fungible token (NFT) with different
-                    attributes and strengths and can be entered into 3v3
-                    battles, with the winning team earning more experience (exp)
-                    points that are used to level up an Axie's stats or evolve
-                    their body parts. These Axies can be bred together to
-                    produce new and unique offspring, which can be used or sold
-                    on the Axie marketplace.
+                    Each Axie is a non-fungible token (NFT) with different attributes and strengths
+                    and can be entered into 3v3 battles, with the winning team earning more
+                    experience (exp) points that are used to level up an Axie's stats or evolve
+                    their body parts. These Axies can be bred together to produce new and unique
+                    offspring, which can be used or sold on the Axie marketplace.
                   </p>
 
                   <p>
-                    The Axie Infinity ecosystem also has its own unique
-                    governance token, known as Axie Infinity Shards (AXS). These
-                    are used to participate in key governance votes and will
-                    give holders a say in how funds in the Axie Community
-                    Treasury are spent.
+                    The Axie Infinity ecosystem also has its own unique governance token, known as
+                    Axie Infinity Shards (AXS). These are used to participate in key governance
+                    votes and will give holders a say in how funds in the Axie Community Treasury
+                    are spent.
                   </p>
 
                   <h3>What Makes Axie Infinity Unique?</h3>
 
                   <p>
-                    Each Axie is a non-fungible token (NFT) with different
-                    attributes and strengths and can be entered into 3v3
-                    battles, with the winning team earning more experience (exp)
-                    points that are used to level up an Axie's stats or evolve
-                    their body parts. These Axies can be bred together to
-                    produce new and unique offspring, which can be used or sold
-                    on the Axie marketplace.
+                    Each Axie is a non-fungible token (NFT) with different attributes and strengths
+                    and can be entered into 3v3 battles, with the winning team earning more
+                    experience (exp) points that are used to level up an Axie's stats or evolve
+                    their body parts. These Axies can be bred together to produce new and unique
+                    offspring, which can be used or sold on the Axie marketplace.
                   </p>
 
                   <p>
-                    The Axie Infinity ecosystem also has its own unique
-                    governance token, known as Axie Infinity Shards (AXS). These
-                    are used to participate in key governance votes and will
-                    give holders a say in how funds in the Axie Community
-                    Treasury are spent.
+                    The Axie Infinity ecosystem also has its own unique governance token, known as
+                    Axie Infinity Shards (AXS). These are used to participate in key governance
+                    votes and will give holders a say in how funds in the Axie Community Treasury
+                    are spent.
                   </p>
 
                   <h2>AXS's Tokenomic</h2>
@@ -377,22 +337,19 @@ function Concept() {
                   <h2>Axie Infinity Live Price</h2>
 
                   <p>
-                    The live <strong>Axie Infinity price today</strong> is
-                    $52,18 USD with a 24-hour trading volume of $294.605.161
-                    USD. We update our AXS to USD price in real-time. Axie
-                    Infinity is down 9,16% in the last 24 hours. The current
-                    CoinMarketCap ranking is #43, with a live market cap of
-                    $3.177.981.900 USD. It has a circulating supply of
-                    60.907.500 AXS coins and a max. supply of 270.000.000 AXS
+                    The live <strong>Axie Infinity price today</strong> is $52,18 USD with a 24-hour
+                    trading volume of $294.605.161 USD. We update our AXS to USD price in real-time.
+                    Axie Infinity is down 9,16% in the last 24 hours. The current CoinMarketCap
+                    ranking is #43, with a live market cap of $3.177.981.900 USD. It has a
+                    circulating supply of 60.907.500 AXS coins and a max. supply of 270.000.000 AXS
                     coins.
                   </p>
 
                   <p>
-                    If you would like to know where to buy Axie Infinity, the
-                    top exchanges for trading in Axie Infinity are currently{" "}
-                    <a href="#">Binance</a>, <a href="#">Mandala Exchange</a>,{" "}
-                    <a href="#">Huobi Global</a>, <a href="#">OKEx</a>, and{" "}
-                    <a href="#">FTX</a>.
+                    If you would like to know where to buy Axie Infinity, the top exchanges for
+                    trading in Axie Infinity are currently <a href="#">Binance</a>,{" "}
+                    <a href="#">Mandala Exchange</a>, <a href="#">Huobi Global</a>,{" "}
+                    <a href="#">OKEx</a>, and <a href="#">FTX</a>.
                   </p>
                 </div>
               </div>
@@ -405,4 +362,4 @@ function Concept() {
   );
 }
 
-export default Concept
+export default Concept;

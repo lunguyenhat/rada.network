@@ -25,14 +25,10 @@ const TokenInfo = ({ tokenId }) => {
   const store = useStore();
   const access_token = store.user.access_token;
 
-  const tokenInfo = detailStore?.data?.tokens?.find(
-    (t) => t.symbol === tokenId
-  );
+  const tokenInfo = detailStore?.data?.tokens?.find((t) => t.symbol === tokenId);
   useEffect(() => {
     tokenInfo &&
-      getTokenById({ id: tokenInfo?.slug, lang: i18n.language }).then(function (
-        res
-      ) {
+      getTokenById({ id: tokenInfo?.slug, lang: i18n.language }).then(function (res) {
         setTokenData(res.data.tokenById);
         getCoinInfo(res.data.tokenById?.id);
       });
@@ -61,9 +57,7 @@ const TokenInfo = ({ tokenId }) => {
   // find active airdrop
   const airdrop = tokenData?.airdrop?.find((ad) => ad.status == "published");
   // find active invest
-  const investCampaign = tokenData?.invest_campaign?.find(
-    (ic) => ic.status == "published"
-  );
+  const investCampaign = tokenData?.invest_campaign?.find((ic) => ic.status == "published");
 
   return (
     <>
@@ -71,9 +65,7 @@ const TokenInfo = ({ tokenId }) => {
         <div className="tabbar-sub--main">
           <a
             href={`#${symbol}`}
-            className={`tab-item ${
-              subTabName === "information" ? "tab-item--active" : ""
-            }`}
+            className={`tab-item ${subTabName === "information" ? "tab-item--active" : ""}`}
             onClick={() => setSubTabName("information")}
           >
             Overview
@@ -81,9 +73,7 @@ const TokenInfo = ({ tokenId }) => {
 
           <a
             href={`#${symbol}/team`}
-            className={`tab-item ${
-              subTabName === "team" ? "tab-item--active" : ""
-            }`}
+            className={`tab-item ${subTabName === "team" ? "tab-item--active" : ""}`}
             onClick={() => setSubTabName("team")}
           >
             {t("team & backers")}
@@ -96,13 +86,11 @@ const TokenInfo = ({ tokenId }) => {
           {airdrop && (
             <a
               href={`#${symbol}/airdrop`}
-              className={`tab-item ${
-                subTabName === "airdrop" ? "tab-item--active" : ""
-              }`}
+              className={`tab-item ${subTabName === "airdrop" ? "tab-item--active" : ""}`}
               onClick={() => setSubTabName("airdrop")}
             >
               <span className="icon mr-1">
-                <i class="fa-duotone fa-gift"></i>
+                <i className="fa-duotone fa-gift"></i>
               </span>
               {t("Airdrop")}
             </a>
@@ -111,9 +99,7 @@ const TokenInfo = ({ tokenId }) => {
           {access_token && investCampaign && (
             <a
               href={`#${symbol}/invest`}
-              className={`tab-item ${
-                subTabName === "invest" ? "tab-item--active" : ""
-              }`}
+              className={`tab-item ${subTabName === "invest" ? "tab-item--active" : ""}`}
               onClick={() => setSubTabName("invest")}
             >
               Invest
@@ -130,15 +116,9 @@ const TokenInfo = ({ tokenId }) => {
           tokenInfo={tokenInfo}
         />
       )}
-      {subTabName === "team" && (
-        <TokenInfoTeam tokenData={tokenData} tokenInfo={tokenInfo} />
-      )}
+      {subTabName === "team" && <TokenInfoTeam tokenData={tokenData} tokenInfo={tokenInfo} />}
       {subTabName === "airdrop" && (
-        <TokenInfoAirdrop
-          tokenData={tokenData}
-          tokenInfo={tokenInfo}
-          airdrop={airdrop}
-        />
+        <TokenInfoAirdrop tokenData={tokenData} tokenInfo={tokenInfo} airdrop={airdrop} />
       )}
       {subTabName === "invest" && (
         <TokenInfoInvest

@@ -47,8 +47,8 @@ export const IndexRightBar = observer(({ intro }) => {
   useEffect(() => {
     if (window.location.hash) {
       const hash = window.location.hash.substr(1);
-      if (["overview","","invest","team","airdrop"].indexOf(hash) !== -1) {
-        setTabName(hash)
+      if (["overview", "", "invest", "team", "airdrop"].indexOf(hash) !== -1) {
+        setTabName(hash);
       }
     } else {
       setTabName("article");
@@ -67,18 +67,15 @@ export const IndexRightBar = observer(({ intro }) => {
   // find active airdrop
   const airdrop = tokenData?.airdrop?.find((ad) => ad.status == "published");
   // find active invest
-  const investCampaign = tokenData?.invest_campaign?.find(
-    (ic) => ic.status == "published"
-  );
+  const investCampaign = tokenData?.invest_campaign?.find((ic) => ic.status == "published");
 
-  const tokenInfo = detailStore?.data?.tokens && detailStore?.data?.tokens.length
-    ? detailStore?.data?.tokens[0]
-    : null;
+  const tokenInfo =
+    detailStore?.data?.tokens && detailStore?.data?.tokens.length
+      ? detailStore?.data?.tokens[0]
+      : null;
   useEffect(() => {
     tokenInfo &&
-      getTokenById({ id: tokenInfo?.slug, lang: i18n.language }).then(function (
-        res
-      ) {
+      getTokenById({ id: tokenInfo?.slug, lang: i18n.language }).then(function (res) {
         setTokenData(res.data.tokenById);
       });
   }, [tokenInfo]);
@@ -96,9 +93,7 @@ export const IndexRightBar = observer(({ intro }) => {
         <div className={`pane-content--sec--top`}>
           <div className="flex h-full w-full relative">
             {/* Pageback Here */}
-            {dataStore !== undefined &&
-            !_.isEmpty(detailStore.data) &&
-            detailStore.data.id ? (
+            {dataStore !== undefined && !_.isEmpty(detailStore.data) && detailStore.data.id ? (
               <div className="page-back flex-shrink-0">
                 <a
                   title="Back"
@@ -173,7 +168,7 @@ export const IndexRightBar = observer(({ intro }) => {
                         </div>
                       ))} */}
 
-                      {detailStore.data.tokens?.map((token,index) =>{
+                      {detailStore.data.tokens?.map((token, index) => {
                         if (index === 0) {
                           return (
                             <a
@@ -186,74 +181,67 @@ export const IndexRightBar = observer(({ intro }) => {
                               }}
                             >
                               <span className="token-symbol mr-2">
-                                {token &&
-                                <img src={token?.logo !== null ? token.logo : `https://cdn.rada.network/static/img/coins/128x128/${token?.slug}.png`} className="h-px-20 w-px-20" alt={token?.name}/>
-                                }
+                                {token && (
+                                  <img
+                                    src={
+                                      token?.logo !== null
+                                        ? token.logo
+                                        : `https://cdn.rada.network/static/img/coins/128x128/${token?.slug}.png`
+                                    }
+                                    className="h-px-20 w-px-20"
+                                    alt={token?.name}
+                                  />
+                                )}
                               </span>
-                              <span className="tab-item--text !block">
-                                {token.symbol}
-                              </span>
+                              <span className="tab-item--text !block">{token.symbol}</span>
                             </a>
-                            )
+                          );
                         }
                       })}
 
                       <a
                         href="#team"
-                        className={`tab-item ${
-                          tabName === "team" ? "tab-item--active" : ""
-                        }`}
+                        className={`tab-item ${tabName === "team" ? "tab-item--active" : ""}`}
                         onClick={() => {
                           setTabName("team");
                         }}
                       >
                         {/* {t("team & backers")} */}
                         <span className="icon">
-                          <i class="fa-duotone fa-users"></i>
+                          <i className="fa-duotone fa-users"></i>
                         </span>
-                        <span className="tab-item--text">
-                          {t("team")}
-                        </span>
+                        <span className="tab-item--text">{t("team")}</span>
                       </a>
 
                       {investCampaign && (
                         <a
                           href="#invest"
-                          className={`tab-item ${
-                            tabName === "invest" ? "tab-item--active" : ""
-                          }`}
+                          className={`tab-item ${tabName === "invest" ? "tab-item--active" : ""}`}
                           onClick={() => {
                             setTabName("invest");
                           }}
                         >
                           <span className="icon">
-                            <i class="fa-duotone fa-sack-dollar"></i>
+                            <i className="fa-duotone fa-sack-dollar"></i>
                           </span>
-                          <span className="tab-item--text">
-                            {t("invest")}
-                          </span>
+                          <span className="tab-item--text">{t("invest")}</span>
                         </a>
                       )}
 
                       {airdrop && (
                         <a
                           href="#airdrop"
-                          className={`tab-item ${
-                            tabName === "airdrop" ? "tab-item--active" : ""
-                          }`}
+                          className={`tab-item ${tabName === "airdrop" ? "tab-item--active" : ""}`}
                           onClick={() => {
                             setTabName("airdrop");
                           }}
                         >
                           <span className="icon">
-                            <i class="fa-duotone fa-gift"></i>
+                            <i className="fa-duotone fa-gift"></i>
                           </span>
-                          <span className="tab-item--text">
-                            {t("airdrop")}
-                          </span>
+                          <span className="tab-item--text">{t("airdrop")}</span>
                         </a>
                       )}
-
                     </>
                   ) : (
                     ""

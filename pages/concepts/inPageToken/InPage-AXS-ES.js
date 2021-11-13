@@ -10,7 +10,6 @@ function Concept() {
         <div className="page page-coininfo max-w-screen-md mx-auto">
           <div className="section section-coininfo--general">
             <div className="grid grid-cols-1">
-
               {/* Post Header */}
               <div className="flex flex-col">
                 <div className="flex flex-wrap justify-between items-center w-full">
@@ -23,12 +22,8 @@ function Concept() {
                       />
                     </span>
                     <h1 className="flex items-center">
-                      <strong className="text-xl font-semibold">
-                        Axie Infinity
-                      </strong>
-                      <span className="badge badge-coin badge-coin-lg ml-2">
-                        AXS
-                      </span>
+                      <strong className="text-xl font-semibold">Axie Infinity</strong>
+                      <span className="badge badge-coin badge-coin-lg ml-2">AXS</span>
                     </h1>
                   </div>
                   <div className="flex flex-wrap space-x-2 mb-4">
@@ -46,16 +41,14 @@ function Concept() {
                       <div className="pricing">
                         <span className="pricing-value">$51.15</span>
                         <span className="pricing-indicator" type="down">
-                          <i class="fa-solid fa-caret-down mr-1"></i>
+                          <i className="fa-solid fa-caret-down mr-1"></i>
                           9.37%
                         </span>
                       </div>
                       <div className="pricing pricing-sm mt-2">
-                        <span className="pricing-value opacity-50">
-                          0.001241 BTC
-                        </span>
+                        <span className="pricing-value opacity-50">0.001241 BTC</span>
                         <span className="pricing-indicator" type="up">
-                          <i class="fa-solid fa-caret-up mr-1"></i>
+                          <i className="fa-solid fa-caret-up mr-1"></i>
                           3.51%
                         </span>
                       </div>
@@ -64,7 +57,6 @@ function Concept() {
 
                     {/* Pricing Info */}
                     <div className="flex flex-wrap md:flex-nowrap w-full md:ml-6 md:space-x-2 md:divide-x divide-gray-400 divide-opacity-20">
-
                       <div className="md:text-center pr-4 md:pr-0 md:w-1/2 lg:w-full">
                         <div className="field-label">
                           <span className="uppercase opacity-50 text-2xs md:text-xs">
@@ -119,7 +111,6 @@ function Concept() {
                           </strong>
                         </div>
                       </div>
-
                     </div>
                     {/* END: Pricing Info */}
                   </div>
@@ -128,7 +119,6 @@ function Concept() {
                 <div className="mt-4">
                   <div className="flex w-full">
                     <div className="text-sm w-full">
-
                       {/* <div className="flex flex-wrap justify-between items-center">
                         <div className="field-label">
                           <span className="uppercase opacity-50 text-2xs md:text-xs">
@@ -156,7 +146,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-twitter"></i>
+                              <i className="fa-brands fa-twitter"></i>
                             </span>
                             <span className="btn--text">Twitter</span>
                           </a>
@@ -167,7 +157,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-telegram"></i>
+                              <i className="fa-brands fa-telegram"></i>
                             </span>
                             <span className="btn--text">Telegram</span>
                           </a> */}
@@ -178,7 +168,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-discord"></i>
+                              <i className="fa-brands fa-discord"></i>
                             </span>
                             <span className="btn--text">Discord</span>
                           </a>
@@ -189,7 +179,7 @@ function Concept() {
                             target="_blank"
                           >
                             <span className="icon">
-                              <i class="fa-brands fa-medium"></i>
+                              <i className="fa-brands fa-medium"></i>
                             </span>
                             <span className="btn--text">Medium</span>
                           </a>
@@ -232,37 +222,25 @@ function Concept() {
 
                       <div className="flex flex-wrap justify-between items-center">
                         <div className="field-label">
-                          <span className="uppercase opacity-50 text-2xs md:text-xs">
-                            Contract
-                          </span>
+                          <span className="uppercase opacity-50 text-2xs md:text-xs">Contract</span>
                         </div>
                         <div className="">
-                          <a
-                            href="#"
-                            className="btn btn-default btn-default-sm mb-2 mr-2"
-                          >
+                          <a href="#" className="btn btn-default btn-default-sm mb-2 mr-2">
                             <span className="icon">
-                              <i class="cf cf-eth"></i>
+                              <i className="cf cf-eth"></i>
                             </span>
-                            <span className="btn--text">
-                              0xF5D6696273...8dd940327b28b
-                            </span>
+                            <span className="btn--text">0xF5D6696273...8dd940327b28b</span>
                             <span className="icon">
-                              <i class="fa-regular fa-copy text-2xs"></i>
+                              <i className="fa-regular fa-copy text-2xs"></i>
                             </span>
                           </a>
-                          <a
-                            href="#"
-                            className="btn btn-default btn-default-sm mb-2"
-                          >
+                          <a href="#" className="btn btn-default btn-default-sm mb-2">
                             <span className="icon">
-                              <i class="cf cf-bsc"></i>
+                              <i className="cf cf-bsc"></i>
                             </span>
-                            <span className="btn--text">
-                              0xF5D6696273...8dd940327b28b
-                            </span>
+                            <span className="btn--text">0xF5D6696273...8dd940327b28b</span>
                             <span className="icon">
-                              <i class="fa-regular fa-copy text-2xs"></i>
+                              <i className="fa-regular fa-copy text-2xs"></i>
                             </span>
                           </a>
                         </div>
@@ -270,7 +248,6 @@ function Concept() {
                     </div>
                   </div>
                 </div>
-              
               </div>
               {/* End: Post Header */}
 
@@ -279,14 +256,14 @@ function Concept() {
                 <div className="post-content mt-8">
                   <div className="empty-state text-center py-8 lg:px-8">
                     <span className="icon">
-                      <i class="fa-duotone fa-telescope text-5xl text-yellow-500"></i>
+                      <i className="fa-duotone fa-telescope text-5xl text-yellow-500"></i>
                     </span>
                     <p className="opacity-50 pt-8 pb-2 m-auto">
                       We don't have article about <strong>Axie Infinity (AXS)</strong> yet.
                     </p>
                     <button className="btn btn-default btn-lg btn-primary">
                       <span className="icon">
-                        <i class="fa-solid fa-heart"></i>
+                        <i className="fa-solid fa-heart"></i>
                       </span>
                       <span className="btn--text">Contribute</span>
                     </button>
@@ -302,4 +279,4 @@ function Concept() {
   );
 }
 
-export default Concept
+export default Concept;

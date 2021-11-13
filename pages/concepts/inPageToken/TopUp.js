@@ -66,9 +66,7 @@ export default function UserProfile(props) {
   if (loading) return null;
   // If no session exists, display access denied message
   if (!session) {
-    return (
-      <ProfileAccessDenied dataStore={dataStore} detailStore={detailStore} />
-    );
+    return <ProfileAccessDenied dataStore={dataStore} detailStore={detailStore} />;
   }
   // If session exists, display content
   let google = {},
@@ -89,9 +87,8 @@ export default function UserProfile(props) {
   });
   const meta = {
     title:
-      (user?.name ? user?.name : "User").replace(/(^|\s)\S/g, (letter) =>
-        letter.toUpperCase()
-      ) + " Profile",
+      (user?.name ? user?.name : "User").replace(/(^|\s)\S/g, (letter) => letter.toUpperCase()) +
+      " Profile",
   };
 
   const handleConnectWallet = () => {
@@ -181,8 +178,6 @@ export default function UserProfile(props) {
   return (
     <>
       <StaticLayout meta={meta}>
-        
-
         <div className="page-section">
           <a
             href="../user/profile"
@@ -201,14 +196,9 @@ export default function UserProfile(props) {
           </a>
           <div className="flex items-center">
             <div className="mr-auto inline-flex px-3 py-1 items-center rounded bg-gray-200 dark:bg-gray-800">
-              <span className="text-xs text-gray-500 mr-2 uppercase font-semibold">
-                Balance
-              </span>
+              <span className="text-xs text-gray-500 mr-2 uppercase font-semibold">Balance</span>
               <span className="flex w-5 h-5 m-auto opacity-80">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 22.14 23.04"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.14 23.04">
                   <path
                     d="M11.07,22.84c-2.83,0-8.39-3.2-9.81-5.66s-1.41-8.87,0-11.32S8.24.2,11.07.2s8.39,3.21,9.8,5.66,1.42,8.87,0,11.32S13.9,22.84,11.07,22.84Z"
                     fill="#374050"
@@ -285,10 +275,8 @@ export default function UserProfile(props) {
             <div className="flex-1 mt-2 ml-2 w-100 text-gray-500">
               <span>
                 Your allocation is {topupInfo.max_rir} RIR. You can top up{" "}
-                {topupInfo.max_rir -
-                  topupInfo.pending_rir -
-                  topupInfo.approved_rir}{" "}
-                RIR to your account.
+                {topupInfo.max_rir - topupInfo.pending_rir - topupInfo.approved_rir} RIR to your
+                account.
               </span>
             </div>
           </div>
@@ -308,10 +296,7 @@ export default function UserProfile(props) {
                   >
                     <div className="w-12 flex items-center bg-gray-100 border border-gray-200 rounded-l dark:border-gray-700 dark:bg-gray-800">
                       <span className="flex w-5 h-5 m-auto opacity-60">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 22.14 23.04"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.14 23.04">
                           <path
                             d="M11.07,22.84c-2.83,0-8.39-3.2-9.81-5.66s-1.41-8.87,0-11.32S8.24.2,11.07.2s8.39,3.21,9.8,5.66,1.42,8.87,0,11.32S13.9,22.84,11.07,22.84Z"
                             fill="#374050"
@@ -452,22 +437,17 @@ export default function UserProfile(props) {
                           0x6cdF11996eEd528d69Cd8B56503fDb19EC0B2977
                         </span>
                         <span className="icon">
-                          <i class="fa-regular fa-copy text-2xs"></i>
+                          <i className="fa-regular fa-copy text-2xs"></i>
                         </span>
                       </a>
                     </div>
                   </div>
                   <div className="flex flex-wrap justify-between mb-1">
                     <div className="w-full lg:w-auto">
-                      <span className="uppercase opacity-50 text-2xs md:text-xs">
-                        Network
-                      </span>
+                      <span className="uppercase opacity-50 text-2xs md:text-xs">Network</span>
                     </div>
                     <div className="text-sm">
-                      BSC{" "}
-                      <span className="text-gray-500">
-                        Binance Smart Chain (BEP20)
-                      </span>
+                      BSC <span className="text-gray-500">Binance Smart Chain (BEP20)</span>
                     </div>
                   </div>
                 </div>
@@ -505,9 +485,7 @@ export default function UserProfile(props) {
               <button
                 disabled={topupForm.number_rir === "" || topupForm.txid === ""}
                 className={`btn btn-primary ${
-                  topupForm.number_rir === "" || topupForm.txid === ""
-                    ? "disabled"
-                    : ""
+                  topupForm.number_rir === "" || topupForm.txid === "" ? "disabled" : ""
                 } py-2 px-3`}
                 onClick={handleTopup}
               >
@@ -526,9 +504,7 @@ export default function UserProfile(props) {
                   </span>
                   <span className="w-3/6">TOP UP</span>
                   <span className="ml-2">
-                    {invest.is_approved
-                      ? invest.approved_rir
-                      : invest.pending_rir}
+                    {invest.is_approved ? invest.approved_rir : invest.pending_rir}
                     RIR
                   </span>
                   <span

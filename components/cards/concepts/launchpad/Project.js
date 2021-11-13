@@ -2,7 +2,7 @@ import React from "react";
 import utils from "../../../../lib/util";
 import ContentLoader from "react-content-loader";
 import RadaSvg from "../../../svg/rada";
-import Link from "next/link"
+import Link from "next/link";
 export const NewsLoader = (props) => (
   <div className={`card card-post`}>
     <div className={`card-body`}>
@@ -10,7 +10,7 @@ export const NewsLoader = (props) => (
         speed={2}
         backgroundColor="#9CA3AF"
         foregroundColor="#E5E7EB"
-        style={{ opacity: '20%' }}
+        style={{ opacity: "20%" }}
         viewBox="0 0 380 100"
         {...props}
       >
@@ -23,9 +23,24 @@ export const NewsLoader = (props) => (
       </ContentLoader>
     </div>
   </div>
-)
-export const CardProject = ({title, link, img, status, raise, tokenLogo, tokenPrice, countdown, token, progressToken, target, progressPercentage, type, network, desc}) => {
-  
+);
+export const CardProject = ({
+  title,
+  link,
+  img,
+  status,
+  raise,
+  tokenLogo,
+  tokenPrice,
+  countdown,
+  token,
+  progressToken,
+  target,
+  progressPercentage,
+  type,
+  network,
+  desc,
+}) => {
   return (
     <a href={link} className={`card-project is-${status}`}>
       {/* {status=="closed"?
@@ -46,36 +61,24 @@ export const CardProject = ({title, link, img, status, raise, tokenLogo, tokenPr
             <img className="project-thumb--img" src={img} alt="{title}" />
           </div>
         </div>
-        <div class="project-content--meta">
-          
+        <div className="project-content--meta">
           <div className="project-title">
             <div className="project-title--token-logo bg-white w-6 h-6 md:w-10 md:h-10 p-0.5 mr-1 rounded-full">
               <img src={tokenLogo} className="rounded-full" />
             </div>
-            <div className="project-title--token-name ">
-              {title}
-            </div>
+            <div className="project-title--token-name ">{title}</div>
             <div className="project-type">
               <span className={`label ml-auto ${type}`}>{type}</span>
             </div>
           </div>
-          <div className="project-desc">
-            {desc}
-          </div>
+          <div className="project-desc">{desc}</div>
           <ul className="">
-            
             <li className="list-pair mt-auto mb-0">
-              <span className="list-key">
-                Raise
-              </span>
-              <span className="ml-auto list-value font-semibold">
-              {raise}
-              </span>
+              <span className="list-key">Raise</span>
+              <span className="ml-auto list-value font-semibold">{raise}</span>
             </li>
             <li className="list-pair">
-              <span className="list-key">
-                Token price
-              </span>
+              <span className="list-key">Token price</span>
               <span className="list-value ml-auto"> {tokenPrice}</span>
             </li>
             {/* {status=="open"? 
@@ -87,20 +90,25 @@ export const CardProject = ({title, link, img, status, raise, tokenLogo, tokenPr
             </li>
             : "" } */}
             <li className="list-pair">
-              <span className="list-key">
-                Progress
-              </span>
+              <span className="list-key">Progress</span>
               <span className="list-value ml-auto">
                 <span className="font-semibold">{progressToken}</span>
                 <span className="opacity-70">/{target}</span> {token}
               </span>
             </li>
           </ul>
-          {status=="open" ? 
-          <div className="progress-bar mt-2 bg-gray-300 dark:bg-gray-600 w-full h-5 rounded-full">
-            <div className="text-2xs font-semibold flex px-2 text-white items-center progress-bar--percentage h-5 bg-green-600 rounded-full" style={{width: `${progressPercentage}`}}>{progressPercentage}</div>
-          </div>
-          : ""}
+          {status == "open" ? (
+            <div className="progress-bar mt-2 bg-gray-300 dark:bg-gray-600 w-full h-5 rounded-full">
+              <div
+                className="text-2xs font-semibold flex px-2 text-white items-center progress-bar--percentage h-5 bg-green-600 rounded-full"
+                style={{ width: `${progressPercentage}` }}
+              >
+                {progressPercentage}
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="project--cta ">
             <div className={`countdown--wrapper ${status == "closed" ? "hidden" : ""}`}>
               {/* <div className="opacity-70 flex items-center my-2">
@@ -113,42 +121,48 @@ export const CardProject = ({title, link, img, status, raise, tokenLogo, tokenPr
                 </span>
                 <span className="">Ends in</span>
               </div> */}
-              
-              {status=="open" ? 
-              <div className="countdown--mini">
-                <div className="countdown--mini--body countdown--mini--body--day">
-                  <time>12</time> <span>days</span>
+
+              {status == "open" ? (
+                <div className="countdown--mini">
+                  <div className="countdown--mini--body countdown--mini--body--day">
+                    <time>12</time> <span>days</span>
+                  </div>
+                  <div className="countdown--mini--body countdown--mini--body--hour">
+                    <time>15</time>
+                    <span>hrs</span>
+                  </div>
+                  <div className="countdown--mini--body countdown--mini--body--minute">
+                    <time> 48 </time>
+                    <span>min</span>
+                  </div>
+                  <div className="countdown--mini--body countdown--mini--second">
+                    <time> 24 </time>
+                    <span>sec</span>
+                  </div>
                 </div>
-                <div className="countdown--mini--body countdown--mini--body--hour">
-                  <time>15</time>
-                  <span>hrs</span>
-                </div>
-                <div className="countdown--mini--body countdown--mini--body--minute">
-                  <time> 48 </time>
-                  <span>min</span>
-                </div>
-                <div className="countdown--mini--body countdown--mini--second">
-                  <time> 24 </time>
-                  <span>sec</span>
-                </div>
-              </div> : ""}
-              
-              
+              ) : (
+                ""
+              )}
             </div>
 
-            {status!="upcoming"?<a href="project" className={`rounded-lg btn-primary block mt-4 p-3 text-center is-${status}`}><span>
-              {status == "closed" ? "Closed" : "Invest now"}
-              </span>
-            </a> : ""}
+            {status != "upcoming" ? (
+              <a
+                href="project"
+                className={`rounded-lg btn-primary block mt-4 p-3 text-center is-${status}`}
+              >
+                <span>{status == "closed" ? "Closed" : "Invest now"}</span>
+              </a>
+            ) : (
+              ""
+            )}
           </div>
           {/* End of project-cta */}
         </div>
       </div>
-        {/* End of project--content */}
+      {/* End of project--content */}
       {/* End of card--body */}
-     
+
       {/* End of card--wrapper */}
     </a>
-    
-  )
-}
+  );
+};
